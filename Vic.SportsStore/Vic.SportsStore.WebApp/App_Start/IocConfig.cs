@@ -22,7 +22,7 @@ namespace Vic.SportsStore.WebApp
                 .PropertiesAutowired();
 
             builder
-                .RegisterInstance<IProductsRepository>(new InMemoryProductsRepository())
+                .RegisterInstance<IProductsRepository>(new EFProductRepository())
                 .PropertiesAutowired();
 
             //Mock<IProductsRepository> mock = new Mock<IProductsRepository>();
