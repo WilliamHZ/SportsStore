@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vic.SportsStore.Domain.Concrete;
+using Vic.SportsStore.Domain.Entities;
 
 namespace Vic.SportsStore.DebugConsole
 {
@@ -10,6 +12,22 @@ namespace Vic.SportsStore.DebugConsole
     {
         static void Main(string[] args)
         {
+            using (var ctx = new EFDbContext())
+            {
+                var product = new Product()
+                {
+                    Name = "apple",
+                    Price = 1.2m,
+                    Description = "this is an apple",
+                    Category = "food",
+                };
+
+                ctx.Products.Add(product);
+                ctx.SaveChanges();
+            }
+
+            Console.WriteLine("Done");
+            Console.ReadLine();
         }
     }
 }
