@@ -10,10 +10,13 @@ namespace Vic.SportsStore.Domain.Concrete
 {
     public class EFProductRepository : IProductsRepository
     {
-        private EFDbContext context = new EFDbContext();
+        public EFDbContext Context { get; set; }
         public IEnumerable<Product> Products
         {
-            get { return context.Products; }
+            get
+            {
+                return Context.Products;
+            }
         }
     }
 }

@@ -25,6 +25,10 @@ namespace Vic.SportsStore.WebApp
                 .RegisterInstance<IProductsRepository>(new EFProductRepository())
                 .PropertiesAutowired();
 
+            builder
+                .RegisterInstance<EFDbContext>(new EFDbContext())
+                .PropertiesAutowired();
+
             //Mock<IProductsRepository> mock = new Mock<IProductsRepository>();
             //mock.Setup(m => m.Products).Returns(new List<Product>
             //{
