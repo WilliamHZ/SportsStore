@@ -9,16 +9,18 @@ namespace Vic.SportsStore.WebApp.Controllers
 {
     public class ProductController : Controller
     {
-        private IProductsRepository repository;
+        public IProductsRepository ProductsRepository { get; set; }
 
-        public ProductController(IProductsRepository productsRepository)
-        {
-            this.repository = productsRepository;
-        }
+        //private IProductsRepository repository;
+
+        //public ProductController(IProductsRepository productsRepository)
+        //{
+        //    this.repository = productsRepository;
+        //}
 
         public ViewResult List()
         {
-            return View(repository.Products);
+            return View(ProductsRepository.Products);
         }
     }
 }
