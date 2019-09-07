@@ -18,6 +18,8 @@ namespace Vic.SportsStore.WebApp
             var builder = new ContainerBuilder();
             builder.RegisterControllers(typeof(MvcApplication).Assembly).PropertiesAutowired();
 
+            //builder.RegisterInstance<IProductsRepository>(new InMemory)
+
             Mock<IProductsRepository> mock = new Mock<IProductsRepository>();
             mock.Setup(m => m.Products).Returns(new List<Product>
             {
