@@ -9,9 +9,15 @@ namespace Vic.SportsStore.WebApp.Controllers
 {
     public class ProductController : Controller
     {
-        public IProductsRepository ProductsRepository { get; set; }
+        //public IProductsRepository ProductsRepository { get; set; }
 
-        //private IProductsRepository repository;
+        private IProductsRepository repository;
+        public int PageSize = 2;
+
+        public ProductController(IProductsRepository productsRepository)
+        {
+            this.repository = productsRepository;
+        }
 
         //public ProductController(IProductsRepository productsRepository)
         //{
@@ -20,7 +26,12 @@ namespace Vic.SportsStore.WebApp.Controllers
 
         public ViewResult List()
         {
-            return View(ProductsRepository.Products);
+            return View(
+                repository
+                .Products
+                .OrderBy(p => p.ProductId)
+                .Skip((PageSize - 1)* PageSize)
+                .Take(PageSize));
         }
     }
 }

@@ -14,15 +14,30 @@ namespace Vic.SportsStore.DebugConsole
         {
             using (var ctx = new EFDbContext())
             {
-                var product = new Product()
+                for (int i =0; i <20; i++)
                 {
-                    Name = "apple",
-                    Price = 1.2m,
-                    Description = "this is an apple",
-                    Category = "food",
-                };
+                    var product1 = new Product()
+                    {
+                        
+                        Name = $"apple_{i}",
+                        Price = i + 1m,
+                        Description = $"this is an apple {i}",
+                        Category = "food",
+                    };
 
-                ctx.Products.Add(product);
+                    var product2 = new Product()
+                    {
+
+                        Name = $"book_{i}",
+                        Price = i + 1m,
+                        Description = $"this is a book {i}",
+                        Category = "book",
+                    };
+
+                    ctx.Products.Add(product1);
+                    ctx.Products.Add(product2);
+                }
+              
                 ctx.SaveChanges();
             }
 
