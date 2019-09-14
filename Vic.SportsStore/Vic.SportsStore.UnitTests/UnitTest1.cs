@@ -19,7 +19,7 @@ namespace Vic.SportsStore.UnitTests
             Mock<IProductsRepository> mock = new Mock<IProductsRepository>();
             mock.Setup(m => m.Products).Returns(new Product[]{
                 new Product { ProductId = 1, Name = "P1" },
-                new Product { ProductId = 2, Name = "P2"},
+                new Product { ProductId = 2, Name = "P2" },
                 new Product { ProductId = 3, Name = "P3" },
                 new Product { ProductId = 4, Name = "P4" },
                 new Product { ProductId = 5, Name = "P5" }

@@ -18,11 +18,6 @@ namespace Vic.SportsStore.WebApp.Controllers
         //    this.repository = productsRepository;
         //}
 
-        //public ProductController(IProductsRepository productsRepository)
-        //{
-        //    this.repository = productsRepository;
-        //}
-
         public ViewResult List(int page = 1)
         {
             return View(
