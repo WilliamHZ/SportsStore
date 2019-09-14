@@ -14,8 +14,10 @@ namespace Vic.SportsStore.WebApp.Controllers
         {
             repository = repo;
         }
-        public PartialViewResult Menu()
+        public PartialViewResult Menu(string category = null)
         {
+            ViewBag.SelectedCategory = category;
+
             IEnumerable<string> categories = repository
             .Products
             .Select(x => x.Category)
