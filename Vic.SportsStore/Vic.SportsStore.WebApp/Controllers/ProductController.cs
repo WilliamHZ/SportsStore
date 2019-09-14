@@ -9,28 +9,27 @@ namespace Vic.SportsStore.WebApp.Controllers
 {
     public class ProductController : Controller
     {
-        //public IProductsRepository ProductsRepository { get; set; }
-
-        private IProductsRepository repository;
+        //private IProductsRepository repository;
         public int PageSize = 2;
-
-        public ProductController(IProductsRepository productsRepository)
-        {
-            this.repository = productsRepository;
-        }
+        public IProductsRepository ProductsRepository { get; set; }
 
         //public ProductController(IProductsRepository productsRepository)
         //{
         //    this.repository = productsRepository;
         //}
 
-        public ViewResult List()
+        //public ProductController(IProductsRepository productsRepository)
+        //{
+        //    this.repository = productsRepository;
+        //}
+
+        public ViewResult List(int page = 1)
         {
             return View(
-                repository
+                ProductsRepository
                 .Products
                 .OrderBy(p => p.ProductId)
-                .Skip((PageSize - 1)* PageSize)
+                .Skip((page - 1) * PageSize)
                 .Take(PageSize));
         }
     }
