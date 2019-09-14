@@ -12,7 +12,10 @@ namespace Vic.SportsStore.WebApp.Models
         public int CurrentPage { get; set; }
         public int TotalPages
         {
-            get { return (int)Math.Ceiling((decimal)TotalItems / ItemsPerPage); }
+            get
+            {
+                return (int)Math.Ceiling((decimal)TotalItems / ItemsPerPage);
+            }
         }
     }
 }
