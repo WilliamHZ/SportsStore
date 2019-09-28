@@ -29,15 +29,9 @@ namespace Vic.SportsStore.WebApp
                 .RegisterInstance<EFDbContext>(new EFDbContext())
                 .PropertiesAutowired();
 
-            //Mock<IProductsRepository> mock = new Mock<IProductsRepository>();
-            //mock.Setup(m => m.Products).Returns(new List<Product>
-            //{
-            //    new Product { Name = "Football", Price = 25 },
-            //    new Product { Name = "Surf board", Price = 179 },
-            //    new Product { Name = "Running shoes", Price = 95 }
-            //});
-
-            //builder.RegisterInstance<IProductsRepository>(mock.Object);
+            builder
+                .RegisterInstance<IOrderProcessor>(new EmailOrderProcessor(new EmailSettings()))
+                .PropertiesAutowired();
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
