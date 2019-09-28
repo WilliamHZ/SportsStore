@@ -63,5 +63,10 @@ namespace Vic.SportsStore.WebApp.Controllers
         {
             return PartialView(cart);
         }
+
+        public ViewResult Checkout()
+        {
+            return View(new ShippingDetails());
+        }
     }
 }
