@@ -16,6 +16,6 @@ namespace Vic.SportsStore.Domain.Concrete
         public string ServerName = "smtp.example.com";
         public int ServerPort = 587;
         public bool WriteAsFile = true;
-        public string FileLocation = @"D:\ASP.Net MVC\Project\SportsStore\Email";
+        public string FileLocation = @"D:\ASP.Net MVC\Project\Email";
     }
 }
