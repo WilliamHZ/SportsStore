@@ -58,5 +58,10 @@ namespace Vic.SportsStore.WebApp.Controllers
                 Cart = cart
             });
         }
+
+        public PartialViewResult Summary(Cart cart)
+        {
+            return PartialView(cart);
+        }
     }
 }
