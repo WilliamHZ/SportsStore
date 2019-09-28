@@ -5,13 +5,12 @@ using System.Web;
 using System.Web.Mvc;
 using Vic.SportsStore.Domain.Entities;
 using Vic.SportsStore.Domain.Abstract;
-using Vic.SportsStore.Domain.Concrete;
 
 namespace Vic.SportsStore.WebApp.Controllers
 {
     public class CartController : Controller
     {
-        private IProductsRespository respository;
+        private IProductsRepository repository;
         public CartController(IProductsRepository repo)
         {
             repository = repo;
@@ -19,7 +18,7 @@ namespace Vic.SportsStore.WebApp.Controllers
 
         public RedirectToRouteResult AddToCart(int productId, string returnUrl)
         {
-            Product product = repostory
+            Product product = repository
                 .Products
                 .FirstOrDefault(p => p.ProductId == productId);
 
