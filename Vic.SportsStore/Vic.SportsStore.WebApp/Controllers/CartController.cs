@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Vic.SportsStore.Domain.Entities;
 using Vic.SportsStore.Domain.Abstract;
+using Vic.SportsStore.WebApp.Models;
 
 namespace Vic.SportsStore.WebApp.Controllers
 {
@@ -55,6 +56,15 @@ namespace Vic.SportsStore.WebApp.Controllers
             }
 
             return cart;
+        }
+
+        public ViewResult Index(string returnUrl)
+        {
+            return View(new CartIndexViewModel
+            {
+                Cart = GetCart(),
+                ReturnUrl = returnUrl
+            });
         }
     }
 }
