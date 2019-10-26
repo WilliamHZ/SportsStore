@@ -25,6 +25,7 @@
                         {
                             @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
                         }
+                        @Html.ValidationMessage(property.PropertyName)
                     </div>
                 }
             }
@@ -33,7 +34,7 @@
             <input type="submit" value="Save" class="btn btn-primary" />
             @Html.ActionLink("Cancel and return to List", "Index", null, new
             {
-            @class = "btn btn-default"
+                @class = "btn btn-default"
             })
         </div>
     }
