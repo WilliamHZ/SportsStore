@@ -77,6 +77,7 @@
     <Compile Include="Concrete\EmailSettings.cs" />
     <Compile Include="Concrete\InMemoryProductsRepository.cs" />
     <Compile Include="Entities\Cart.cs" />
+    <Compile Include="Entities\LoginUser.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\ShippingDetails.cs" />
     <Compile Include="Migrations\201909072142167_InitialCreate.cs" />
