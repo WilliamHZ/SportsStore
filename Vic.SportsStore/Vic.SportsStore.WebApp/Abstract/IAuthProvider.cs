@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Vic.SportsStore.WebApp.Abstract
 {
-    interface IAuthProvider
+    public interface IAuthProvider
     {
+        bool Authenticate(string username, string password);
     }
 }
